@@ -1,5 +1,5 @@
 """
-URL configuration for tramily project.
+URL configuration for backend project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/6.1/topics/http/urls/
@@ -16,19 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from ninja import NinjaAPI
-
-api = NinjaAPI()
-
-@api.get("/add")
-def add(request, a: int, b: int):
-    return {"result": a + b}
-
-@api.get("/hello")
-def hello(request, name:str = "world"):
-    return f"Hello {name}"
+from tramily.api import api
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("api/", api.urls),
+    path('api/', api.urls),
 ]

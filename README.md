@@ -44,7 +44,7 @@ backend
 source .venv/bin/activate
 ```
 ```
-./backend/manage.py runserver
+python3 ./backend/manage.py runserver
 ```
 http://127.0.0.1:8000/api/add?a=1&b=2
 http://127.0.0.1:8000/api/docs
