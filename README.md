@@ -1,16 +1,30 @@
-Steps to get running:
+# Steps to get running:
 
+Before:
+```
+brew install python@3.14
+brew install postgresql@18
+```
+
+Create virtual env:
+```
+python3 -m venv venv
+```
+start venv:
 ```
 source .venv/bin/activate
 ```
+or if using fish shell:
+```
+. venv/bin/activate.fish
+```
+
+then:
 ```
 pip3 install -r requirements.txt
 ```
 ```
-cd frontend
-```
-```
-npm install
+npm install --prefix frontend
 ```
 
 db
@@ -36,9 +50,6 @@ http://127.0.0.1:8000/api/add?a=1&b=2
 http://127.0.0.1:8000/api/docs
 
 frontend
-```
-cd frontend
-```
 ```
 npm install --prefix frontend
 ```
