@@ -2,29 +2,29 @@ from ninja import ModelSchema
 from .models import User, TransitLine, Station, UserLocationState, Friendship
 
 class UserSchema(ModelSchema):
-    class Config:
+    class Meta:
         model = User
-        model_fields = ["id", "username", "email", "first_name", "last_name"]
+        fields = ["id", "username", "email", "first_name", "last_name"]
 
 class TransitLineSchema(ModelSchema):
-    class Config:
+    class Meta:
         model = TransitLine
-        model_fields = ["id", "line_name", "line_color"]
+        fields = ["id", "line_name", "line_color"]
 
 class StationSchema(ModelSchema):
-    class Config:
+    class Meta:
         model = Station
-        model_fields = ["id", "station_name", "display_order", "latitude", "longitude"]
+        fields = ["id", "station_name", "display_order", "latitude", "longitude"]
 
 class UserLocationStateSchema(ModelSchema):
     station: StationSchema | None
-    class Config:
+    class Meta:
         model = UserLocationState
-        model_fields = ["id", "station", "updated_at"]
+        fields = ["id", "station", "updated_at"]
 
 class FriendshipSchema(ModelSchema):
     user: UserSchema | None
     friend: UserSchema | None
-    class Config:
+    class Meta:
         model = Friendship
-        model_fields = ["id", "user", "friend", "status", "created_at"]
+        fields = ["id", "user", "friend", "status", "created_at"]
