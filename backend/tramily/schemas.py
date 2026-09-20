@@ -34,3 +34,6 @@ class FriendshipSchema(ModelSchema):
     class Meta:
         model = Friendship
         fields = ["id", "user", "friend", "status", "created_at"]
+
+class Error(Schema):
+    message: str
