@@ -1,6 +1,6 @@
 from ninja import NinjaAPI
 from tramily.models import User
-from tramily.schemas import UserSchema
+from tramily.schemas import UserSchema, UserCreateSchema
 from django.shortcuts import get_object_or_404
 
 api = NinjaAPI()
@@ -13,3 +13,8 @@ def get_users(request):
 def get_user(request, id: int):
     return get_object_or_404(User, id=id)
 
+@api.post('users/', response=UserSchema)
+def create_user(request, user: UserCreateSchema):
+    user_data = user.model_dump()
+    user_instance = User.objects.create(**user_data)
+    return user_instance

@@ -1,10 +1,16 @@
-from ninja import ModelSchema
+from ninja import ModelSchema, Schema
 from .models import User, TransitLine, Station, UserLocationState, Friendship
 
 class UserSchema(ModelSchema):
     class Meta:
         model = User
         fields = ["id", "username", "email", "first_name", "last_name"]
+
+class UserCreateSchema(Schema):
+    username: str
+    email: str
+    first_name: str
+    last_name: str
 
 class TransitLineSchema(ModelSchema):
     class Meta:
