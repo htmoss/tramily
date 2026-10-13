@@ -16,8 +16,8 @@ Content-Type: application/json
 ###
 
 POST http://localhost:8000/api/auth/magic-link/
-    ?email=htmossgmail.com
+    ?email=gmail.com
 
 ###
 POST http://localhost:8000/api/auth/magic-link/
-    ?email=htmoss@gmail.com
+    ?email=htmoss7@gmail.com
