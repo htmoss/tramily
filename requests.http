@@ -1,6 +1,8 @@
 GET http://localhost:8000/api/users/
 Content-Type: application/json
 
+###
+
 POST http://localhost:8000/api/users/
 Content-Type: application/json
 
@@ -10,3 +12,12 @@ Content-Type: application/json
     "first_name": "New",
     "last_name": "User"
 }
+
+###
+
+POST http://localhost:8000/api/auth/magic-link/
+    ?email=htmossgmail.com
+
+###
+POST http://localhost:8000/api/auth/magic-link/
+    ?email=htmoss@gmail.com
