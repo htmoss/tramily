@@ -1,5 +1,6 @@
-import { createRootRoute, Link, Outlet } from '@tanstack/react-router'
-import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
+/* oxlint-disable react/only-export-components */
+import { createRootRoute, Link, Outlet } from '@tanstack/react-router';
+import { TanStackRouterDevtools } from '@tanstack/react-router-devtools';
 
 const RootLayout = () => (
   <>
@@ -24,6 +25,6 @@ const RootLayout = () => (
     <Outlet />
     <TanStackRouterDevtools />
   </>
-)
+);
 
-export const Route = createRootRoute({ component: RootLayout })
+export const Route = createRootRoute({ component: RootLayout });

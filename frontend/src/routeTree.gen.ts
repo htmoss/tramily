@@ -8,81 +8,81 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-import { Route as rootRouteImport } from './routes/__root'
-import { Route as IndexRouteImport } from './routes/index'
-import { Route as AboutRouteImport } from './routes/about'
-import { Route as LoginRouteImport } from './routes/login'
-import { Route as SettingsRouteImport } from './routes/settings'
-import { Route as AuthVerifyRouteImport } from './routes/auth/verify'
-import { Route as FriendsIndexRouteImport } from './routes/friends/index'
-import { Route as FriendsFriendIdRouteImport } from './routes/friends/$friendId'
+import { Route as rootRouteImport } from './routes/__root';
+import { Route as IndexRouteImport } from './routes/index';
+import { Route as AboutRouteImport } from './routes/about';
+import { Route as LoginRouteImport } from './routes/login';
+import { Route as SettingsRouteImport } from './routes/settings';
+import { Route as AuthVerifyRouteImport } from './routes/auth/verify';
+import { Route as FriendsIndexRouteImport } from './routes/friends/index';
+import { Route as FriendsFriendIdRouteImport } from './routes/friends/$friendId';
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const LoginRoute = LoginRouteImport.update({
   id: '/login',
   path: '/login',
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const SettingsRoute = SettingsRouteImport.update({
   id: '/settings',
   path: '/settings',
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const AuthVerifyRoute = AuthVerifyRouteImport.update({
   id: '/auth/verify',
   path: '/auth/verify',
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const FriendsIndexRoute = FriendsIndexRouteImport.update({
   id: '/friends/',
   path: '/friends/',
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const FriendsFriendIdRoute = FriendsFriendIdRouteImport.update({
   id: '/friends/$friendId',
   path: '/friends/$friendId',
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/login': typeof LoginRoute
-  '/settings': typeof SettingsRoute
-  '/auth/verify': typeof AuthVerifyRoute
-  '/friends/$friendId': typeof FriendsFriendIdRoute
-  '/friends/': typeof FriendsIndexRoute
+  '/': typeof IndexRoute;
+  '/about': typeof AboutRoute;
+  '/login': typeof LoginRoute;
+  '/settings': typeof SettingsRoute;
+  '/auth/verify': typeof AuthVerifyRoute;
+  '/friends/$friendId': typeof FriendsFriendIdRoute;
+  '/friends/': typeof FriendsIndexRoute;
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/login': typeof LoginRoute
-  '/settings': typeof SettingsRoute
-  '/auth/verify': typeof AuthVerifyRoute
-  '/friends/$friendId': typeof FriendsFriendIdRoute
-  '/friends': typeof FriendsIndexRoute
+  '/': typeof IndexRoute;
+  '/about': typeof AboutRoute;
+  '/login': typeof LoginRoute;
+  '/settings': typeof SettingsRoute;
+  '/auth/verify': typeof AuthVerifyRoute;
+  '/friends/$friendId': typeof FriendsFriendIdRoute;
+  '/friends': typeof FriendsIndexRoute;
 }
 export interface FileRoutesById {
-  __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/login': typeof LoginRoute
-  '/settings': typeof SettingsRoute
-  '/auth/verify': typeof AuthVerifyRoute
-  '/friends/$friendId': typeof FriendsFriendIdRoute
-  '/friends/': typeof FriendsIndexRoute
+  __root__: typeof rootRouteImport;
+  '/': typeof IndexRoute;
+  '/about': typeof AboutRoute;
+  '/login': typeof LoginRoute;
+  '/settings': typeof SettingsRoute;
+  '/auth/verify': typeof AuthVerifyRoute;
+  '/friends/$friendId': typeof FriendsFriendIdRoute;
+  '/friends/': typeof FriendsIndexRoute;
 }
 export interface FileRouteTypes {
-  fileRoutesByFullPath: FileRoutesByFullPath
+  fileRoutesByFullPath: FileRoutesByFullPath;
   fullPaths:
     | '/'
     | '/about'
@@ -90,16 +90,9 @@ export interface FileRouteTypes {
     | '/settings'
     | '/auth/verify'
     | '/friends/$friendId'
-    | '/friends/'
-  fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/about'
-    | '/login'
-    | '/settings'
-    | '/auth/verify'
-    | '/friends/$friendId'
-    | '/friends'
+    | '/friends/';
+  fileRoutesByTo: FileRoutesByTo;
+  to: '/' | '/about' | '/login' | '/settings' | '/auth/verify' | '/friends/$friendId' | '/friends';
   id:
     | '__root__'
     | '/'
@@ -108,70 +101,70 @@ export interface FileRouteTypes {
     | '/settings'
     | '/auth/verify'
     | '/friends/$friendId'
-    | '/friends/'
-  fileRoutesById: FileRoutesById
+    | '/friends/';
+  fileRoutesById: FileRoutesById;
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
-  AboutRoute: typeof AboutRoute
-  LoginRoute: typeof LoginRoute
-  SettingsRoute: typeof SettingsRoute
-  AuthVerifyRoute: typeof AuthVerifyRoute
-  FriendsFriendIdRoute: typeof FriendsFriendIdRoute
-  FriendsIndexRoute: typeof FriendsIndexRoute
+  IndexRoute: typeof IndexRoute;
+  AboutRoute: typeof AboutRoute;
+  LoginRoute: typeof LoginRoute;
+  SettingsRoute: typeof SettingsRoute;
+  AuthVerifyRoute: typeof AuthVerifyRoute;
+  FriendsFriendIdRoute: typeof FriendsFriendIdRoute;
+  FriendsIndexRoute: typeof FriendsIndexRoute;
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
     '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
+      id: '/';
+      path: '/';
+      fullPath: '/';
+      preLoaderRoute: typeof IndexRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
     '/about': {
-      id: '/about'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutRouteImport
-      parentRoute: typeof rootRouteImport
-    }
+      id: '/about';
+      path: '/about';
+      fullPath: '/about';
+      preLoaderRoute: typeof AboutRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
     '/login': {
-      id: '/login'
-      path: '/login'
-      fullPath: '/login'
-      preLoaderRoute: typeof LoginRouteImport
-      parentRoute: typeof rootRouteImport
-    }
+      id: '/login';
+      path: '/login';
+      fullPath: '/login';
+      preLoaderRoute: typeof LoginRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
     '/settings': {
-      id: '/settings'
-      path: '/settings'
-      fullPath: '/settings'
-      preLoaderRoute: typeof SettingsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
+      id: '/settings';
+      path: '/settings';
+      fullPath: '/settings';
+      preLoaderRoute: typeof SettingsRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
     '/auth/verify': {
-      id: '/auth/verify'
-      path: '/auth/verify'
-      fullPath: '/auth/verify'
-      preLoaderRoute: typeof AuthVerifyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
+      id: '/auth/verify';
+      path: '/auth/verify';
+      fullPath: '/auth/verify';
+      preLoaderRoute: typeof AuthVerifyRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
     '/friends/': {
-      id: '/friends/'
-      path: '/friends'
-      fullPath: '/friends/'
-      preLoaderRoute: typeof FriendsIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
+      id: '/friends/';
+      path: '/friends';
+      fullPath: '/friends/';
+      preLoaderRoute: typeof FriendsIndexRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
     '/friends/$friendId': {
-      id: '/friends/$friendId'
-      path: '/friends/$friendId'
-      fullPath: '/friends/$friendId'
-      preLoaderRoute: typeof FriendsFriendIdRouteImport
-      parentRoute: typeof rootRouteImport
-    }
+      id: '/friends/$friendId';
+      path: '/friends/$friendId';
+      fullPath: '/friends/$friendId';
+      preLoaderRoute: typeof FriendsFriendIdRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
   }
 }
 
@@ -183,7 +176,7 @@ const rootRouteChildren: RootRouteChildren = {
   AuthVerifyRoute: AuthVerifyRoute,
   FriendsFriendIdRoute: FriendsFriendIdRoute,
   FriendsIndexRoute: FriendsIndexRoute,
-}
+};
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
-  ._addFileTypes<FileRouteTypes>()
+  ._addFileTypes<FileRouteTypes>();
