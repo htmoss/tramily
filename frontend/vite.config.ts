@@ -6,6 +6,7 @@ import { tanstackRouter } from '@tanstack/router-plugin/vite';
 export default defineConfig({
   fmt: {
     singleQuote: true,
+    ignorePatterns: ['dist/**', '**/routeTree.gen.ts'],
   },
   lint: {
     plugins: ['oxc', 'typescript', 'unicorn', 'react'],
@@ -17,7 +18,7 @@ export default defineConfig({
       builtin: true,
       browser: true,
     },
-    ignorePatterns: ['dist', '**/routeTree.gen.ts'],
+    ignorePatterns: ['dist'],
     options: {
       typeAware: true,
       typeCheck: true,
