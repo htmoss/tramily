@@ -17,7 +17,7 @@ export default defineConfig({
       builtin: true,
       browser: true,
     },
-    ignorePatterns: ['dist'],
+    ignorePatterns: ['dist', '**/routeTree.gen.ts'],
     options: {
       typeAware: true,
       typeCheck: true,
