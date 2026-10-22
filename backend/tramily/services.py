@@ -14,7 +14,7 @@ def check_existing_user(email: str):
 def create_link():
     token = secrets.token_urlsafe()
     hashed_token = hashlib.sha256(token.encode())
-    return f"http://localhost:5173/api/auth/verify/?token={hashed_token.hexdigest()}"
+    return f"http://localhost:5173/auth/verify?token={hashed_token.hexdigest()}"
 
 def send_email(email: str):
     link = create_link()
@@ -38,7 +38,6 @@ def send_new_user_email(email: str):
     "subject": "hello, click here to sign up for tramily",
     "html": "<p>it works!</p>"
     }
-
     try:
         email = resend.Emails.send(params)
         print(email)

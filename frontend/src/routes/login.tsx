@@ -1,18 +1,32 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { useState } from 'react';
-// import axios from "axios";
+import axios from 'axios';
 
 export const Route = createFileRoute('/login')({
   component: () => {
     const [email, setEmail] = useState('');
-    const [sent, _setSent] = useState(false);
+    const [sent, setSent] = useState(false);
     const [loading, setLoading] = useState(false);
 
     async function handleSubmit(e: React.FormEvent) {
       e.preventDefault();
       setLoading(true);
 
-      // axios.post("http.");
+      axios
+        .post('/api/auth/magic-link/', null, {
+          params: {
+            email: email,
+          },
+        })
+        .then((response) => {
+          console.log(response.data);
+          setSent(true);
+          setLoading(false);
+        })
+        .catch((error) => {
+          console.error('Magic link failed to send', error);
+          setLoading(false);
+        });
     }
     return (
       <div>

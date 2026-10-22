@@ -22,5 +22,5 @@ def send_magic_link(request, email: str):
 
 @router.post('/verify/')
 def verify_magic_link(request, token: str):
-    print("token is", token)
+    print("verifying.......", token)
     return None
